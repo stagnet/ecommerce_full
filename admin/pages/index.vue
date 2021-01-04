@@ -1,38 +1,60 @@
 <template>
   <main>
     <div class="container">
-      <h1>All Products</h1>
+      <!-- all Products -->
+      <h1 class="heading">All Products</h1>
+
       <vs-row>
-        <vs-col>
-          <vs-button active color="#f4d078" gradient
-            >Add a New Product
+        <!-- button 1 -->
+        <vs-col class="column" w="4" sm="12">
+          <vs-button color="#f4d078" gradient>
+            Add a New Product
             <template #animate>
-              <i class="bx bxs-shopping-bags"></i>
+              <i class="bx bxs-shopping-bags bx-sm bx-tada"></i>
             </template>
           </vs-button>
         </vs-col>
-        <vs-col>
-          <vs-button active color="#f4d078" gradient
-            >Add a New Product
+
+        <!-- button 2 -->
+        <vs-col w="4" sm="12" class="column">
+          <vs-button color="#f4d078" gradient>
+            Add a New Category
             <template #animate>
-              <i class="bx bxs-shopping-bags"></i>
+              <i class="bx bxs-category-alt bx-sm bx-tada"></i>
             </template>
           </vs-button>
         </vs-col>
-        <vs-col>
-          <vs-button active color="#f4d078" gradient
-            >Add a New Product
+
+        <!-- button 3 -->
+        <vs-col w="4" sm="12" class="column">
+          <vs-button color="#f4d078" gradient>
+            Add a New Owner
             <template #animate>
-              <i class="bx bxs-shopping-bags"></i>
-            </template> </vs-button
-        ></vs-col>
+              <i class="bx bxs-face bx-sm bx-tada"></i>
+            </template>
+          </vs-button>
+        </vs-col>
       </vs-row>
+
+      <!-- product listing -->
+      <product-card />
     </div>
   </main>
 </template>
 
 <script>
-export default {}
+// import ProductCard from '../components/ProductCard.vue'
+export default {
+  // components: {
+  //   ProductCard,
+  // },
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.column {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+</style>
