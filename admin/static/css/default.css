@@ -86,7 +86,11 @@ hr {
   text-align: center;
   margin: 20px 0px;
 }
-
+.sub-heading {
+  font-size: 25px;
+  text-align: center;
+  margin: 20px 0px;
+}
 /*****************************************
             REGISTER PAGE
 *****************************************/
