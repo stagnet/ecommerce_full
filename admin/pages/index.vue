@@ -51,10 +51,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.column {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-</style>
+<style scoped></style>
