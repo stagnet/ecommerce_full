@@ -2,7 +2,7 @@
   <main>
     <div class="container">
       <vs-row>
-        <vs-col w="3" sm="3">col-3</vs-col>
+        <vs-col w="3" sm="3"></vs-col>
         <vs-col w="6" sm="6">
           <h2 style="text-align: center" class="sub-heading">
             Add a New Product
@@ -16,10 +16,13 @@
                 class="inputs"
                 color="#e77600"
               >
-                <vs-option label="Vuesax" value="Vuesax"> Vuesax </vs-option>
-                <vs-option label="Vue" value="vue"> Vue </vs-option>
-                <vs-option label="Javascript" value="js">
-                  Javascript
+                <vs-option
+                  v-for="category in categories"
+                  :key="category._id"
+                  :label="category.type"
+                  :value="category._id"
+                >
+                  {{ category.type }}
                 </vs-option>
               </vs-select>
             </div>
@@ -32,10 +35,13 @@
                 class="inputs"
                 color="#e77600"
               >
-                <vs-option label="Vuesax" value="Vuesax"> Vuesax </vs-option>
-                <vs-option label="Vue" value="vue"> Vue </vs-option>
-                <vs-option label="Javascript" value="js">
-                  Javascript
+                <vs-option
+                  v-for="owner in owners"
+                  :key="owner._id"
+                  :label="owner.name"
+                  :value="owner._id"
+                >
+                  {{ owner.name }}
                 </vs-option>
               </vs-select>
             </div>
@@ -89,14 +95,14 @@
 
             <!-- submit button -->
             <div class="a-spacing-large">
-              <vs-button color="#f0c14b" relief gradient>
+              <vs-button color="#f0c14b" relief gradient circle>
                 <strong>Upload</strong>
                 <i class="bx bx-upload bx-sm"></i>
               </vs-button>
             </div>
           </form>
         </vs-col>
-        <vs-col w="3" sm="3">col-3</vs-col>
+        <vs-col w="3" sm="3"></vs-col>
       </vs-row>
     </div>
   </main>
@@ -115,6 +121,26 @@ export default {
   },
   //? asyncData is fetching data before nuxt page finished loading on the browser..
   //? It is good for SEO because the data will be loaded first..
+  async asyncData({ $axios }) {
+    try {
+      //* with $ shortcut in axios we will get direct data and with it we'll get the response...
+      let categories = $axios.$get('http://localhost:3000/api/categories')
+      let owners = $axios.$get('http://localhost:3000/api/owners')
+
+      const [catResponse, ownerResponse] = await Promise.all([
+        categories,
+        owners,
+      ])
+      // console.log('catResponse', catResponse)
+      // console.log('ownerResponse', ownerResponse)
+      return {
+        categories: catResponse.data,
+        owners: ownerResponse.data,
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  },
 }
 </script>
 
