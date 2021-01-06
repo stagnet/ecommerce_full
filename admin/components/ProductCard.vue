@@ -29,7 +29,7 @@
           <template #text>
             <vs-col w="12">
               <strong
-                style="color: #ff5252; margin-right: 5px; font-size: 16px"
+                style="color: #ff5252; margin-right: 5px; font-size: 14px"
               >
                 ${{ product.price }}
               </strong>
