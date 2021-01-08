@@ -2,8 +2,8 @@
   <main>
     <div class="container">
       <vs-row>
-        <vs-col w="3" sm="3"></vs-col>
-        <vs-col w="6" sm="6">
+        <vs-col w="2"></vs-col>
+        <vs-col w="5" sm="12">
           <h2 style="text-align: center" class="sub-heading">
             Add a New Product
           </h2>
@@ -74,7 +74,7 @@
               <textarea
                 class="inputs"
                 placeholder="Provide details such as a product description"
-                style="padding: 5px 10px"
+                style="padding: 5px 10px; border-radius: 12px"
               >
               </textarea>
             </div>
@@ -102,7 +102,9 @@
             </div>
           </form>
         </vs-col>
-        <vs-col w="3" sm="3"></vs-col>
+        <vs-col w="4" sm="10">
+          <img src="../assets/Profile.png" alt="form-image" />
+        </vs-col>
       </vs-row>
     </div>
   </main>
@@ -110,15 +112,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      category: '',
-      owner: '',
-      title: '',
-      price: '',
-      description: '',
-    }
-  },
   //? asyncData is fetching data before nuxt page finished loading on the browser..
   //? It is good for SEO because the data will be loaded first..
   async asyncData({ $axios }) {
@@ -141,12 +134,46 @@ export default {
       console.error(error)
     }
   },
+
+  // ? data() is processed on client-side(browser) while asynData() process in server-side..
+  data() {
+    return {
+      category: '',
+      owner: '',
+      title: '',
+      price: '',
+      description: '',
+    }
+  },
 }
 </script>
 
 <style scoped>
+main {
+  position: absolute;
+}
 .inputs {
   min-width: 100%;
   max-width: 100%;
+}
+img {
+  margin: 15px 5px;
+  min-width: 550px;
+  width: 100%;
+  min-height: 350px;
+  height: 100%;
+}
+form {
+  margin: 20px 40px;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 414px) {
+  img {
+    min-width: 350px;
+    height: 400px;
+  }
 }
 </style>
