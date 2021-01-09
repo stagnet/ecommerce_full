@@ -138,11 +138,13 @@ export default {
   // ? data() is processed on client-side(browser) while asynData() process in server-side..
   data() {
     return {
-      category: '',
-      owner: '',
+      categoryID: null,
+      ownerID: null,
       title: '',
-      price: '',
+      price: 0,
+      selectedFile: null,
       description: '',
+      fileName: '',
     }
   },
 }

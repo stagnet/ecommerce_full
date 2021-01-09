@@ -164,7 +164,7 @@ textarea {
   /* border-top-color: #949494; */
   /* box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), */
   /* 0 1px 0 rgba(0, 0, 0, 0.07) inset; */
-  
+
   outline: 0;
   width: 100%;
 }
@@ -4514,7 +4514,7 @@ fieldset {
   font-size: 2.5rem;
 }
 .choosefile-button {
-  border: 2px dashed #ccc;
+  border: 2px dashed #c7c7c7;
   width: 110px;
   height: 110px;
   cursor: pointer;
