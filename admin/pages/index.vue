@@ -7,7 +7,7 @@
       <vs-row>
         <!-- button 1 -->
         <vs-col class="column" w="4" sm="12">
-          <vs-button color="#f4d078" gradient>
+          <vs-button color="#f4d078" gradient to="/product">
             Add a New Product
             <template #animate>
               <i class="bx bxs-shopping-bags bx-sm bx-tada"></i>
@@ -43,12 +43,7 @@
 </template>
 
 <script>
-// import ProductCard from '../components/ProductCard.vue'
-export default {
-  // components: {
-  //   ProductCard,
-  // },
-}
+export default {}
 </script>
 
 <style scoped></style>

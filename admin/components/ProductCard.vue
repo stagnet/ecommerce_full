@@ -21,7 +21,7 @@
             <img
               :src="product.photo[0]"
               alt="book-cover"
-              style="width: 190px; height: 220px"
+              style="width: 170px; height: 200px"
             />
           </template>
 
