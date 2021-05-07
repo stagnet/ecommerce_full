@@ -2,6 +2,7 @@
   <div class="card">
     <p v-if="$fetchState.pending">Loading....</p>
     <p v-else-if="$fetchState.error">Error while fetching mountains</p>
+
     <vs-row>
       <vs-col
         w="4"
@@ -20,7 +21,7 @@
           <template #img>
             <img
               :src="product.photo[0]"
-              alt="book-cover"
+              alt="smartphone"
               style="width: 170px; height: 200px"
             />
           </template>
@@ -71,6 +72,7 @@ export default {
   async fetch() {
     this.products = await fetch('http://localhost:3000/api/products')
       .then((response) => {
+        console.log('prod', this.products)
         return response.json()
       })
       .catch((err) => console.log(err))
