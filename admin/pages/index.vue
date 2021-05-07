@@ -7,7 +7,7 @@
       <vs-row>
         <!-- button 1 -->
         <vs-col class="column" w="4" sm="12">
-          <vs-button color="#f4d078" gradient to="/product">
+          <vs-button color="#f4d078" gradient to="/addproduct">
             Add a New Product
             <template #animate>
               <i class="bx bxs-shopping-bags bx-sm bx-tada"></i>
@@ -17,17 +17,21 @@
 
         <!-- button 2 -->
         <vs-col w="4" sm="12" class="column">
-          <vs-button color="#f4d078" gradient>
+          <vs-button color="#f4d078" gradient @click="active = !active">
             Add a New Category
             <template #animate>
               <i class="bx bxs-category-alt bx-sm bx-tada"></i>
             </template>
           </vs-button>
+
+          <!-- //? DialogBox.. -->
+          <category-dialog v-model="active" />
+          <!-- //? DialogBox ends.. -->
         </vs-col>
 
         <!-- button 3 -->
         <vs-col w="4" sm="12" class="column">
-          <vs-button color="#f4d078" gradient>
+          <vs-button color="#f4d078" gradient to="/owner">
             Add a New Owner
             <template #animate>
               <i class="bx bxs-face bx-sm bx-tada"></i>
@@ -43,7 +47,17 @@
 </template>
 
 <script>
-export default {}
+import categoryDialog from '../components/categoryDialog.vue'
+
+export default {
+  components: { categoryDialog },
+
+  data() {
+    return {
+      active: false,
+    }
+  },
+}
 </script>
 
 <style scoped></style>
