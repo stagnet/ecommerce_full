@@ -114,7 +114,7 @@ export default {
   methods: {
     onFileSelected(event) {
       this.selectedFile = event.target.files[0]
-      console.log(this.selectedFile)
+      console.log(event.target)
       this.fileName = event.target.files[0].name
     },
 
