@@ -27,6 +27,7 @@
           <!-- //? chip.. -->
           <vs-col
             w="2"
+            sm="4"
             class="a-spacing-top-base"
             v-for="cat in categories.data"
             :key="cat._id"
@@ -103,19 +104,6 @@ export default {
 </script>
 
 <style scoped>
-@media (max-width: 375px) {
-  .chip {
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #e0e0e0;
-    height: 30px;
-    margin: 0 20px;
-    border-radius: 10px;
-    font-size: 13px; */
-    background-color: #f64f59;
-  }
-}
 .not-margin {
   margin: 0px;
   font-weight: normal;
