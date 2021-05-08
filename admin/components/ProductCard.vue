@@ -45,7 +45,12 @@
 
           <!-- buttons -->
           <template #interactions>
-            <vs-button color="#71c7ec" gradient class="update-button">
+            <vs-button
+              color="#71c7ec"
+              gradient
+              class="update-button"
+              @click="updateProduct(product._id)"
+            >
               Update
               <i class="bx bx-pencil bx-xs"></i>
             </vs-button>
@@ -76,6 +81,11 @@ export default {
         return response.json()
       })
       .catch((err) => console.log(err))
+  },
+  methods: {
+    updateProduct(id) {
+      return this.$router.push(`products/${id}`)
+    },
   },
   // fecthOnServer: false,
 }
